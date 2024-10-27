@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid Layout</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        background-color: blue;
+        /* display: flex; */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px;
+      }
+      .common {
+        /* width: 100px; */
+        /* height: 100px; */
+        margin: 10px;
+        background-color: aliceblue;
+      }
+      .header {
+        grid-column-start: 1;
+        grid-column-end: 7;
+      }
+      .menu {
+        grid-row-start: 2;
+        grid-row-end: 4;
+      }
+      .main {
+        grid-column-start: 2;
+        grid-column-end: 5;
+      }
+      .right {
+        grid-column-start: 5;
+        grid-column-end: 7;
+      }
+      .footer {
+        grid-column-start: 2;
+        grid-column-end: 7;
+      }
+
+      /* for small devices */
+      @media screen and (max-width: 576px) {
+        .container {
+
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr;
+        }
+        .common {
+          grid-column-start: 1;
+          grid-column-end: 2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header common">Header</div>
+      <div class="menu common">Menu</div>
+      <div class="main common">Main</div>
+      <div class="right common">Right</div>
+      <div class="footer common">Footer</div>
+    </div>
+  </body>
+</html>
